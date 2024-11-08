@@ -1,0 +1,19 @@
+<template>
+  <template if:false={loaded}>
+    <lightning-spinner alternative-text="Loading"></lightning-spinner>
+  </template>
+  <template if:true={loaded}>
+    <template if:true={wCurrent}>
+      <h1 class="slds-text-heading_medium">
+        Here's the current wheather in {destination}
+      </h1>
+      <div>
+        <ul>
+          <li>Description: {wCurrent.description}</li>
+          <li>Temperature: {wCurrent.temperature}°C</li>
+          <li>Humidity: {wCurrent.humidity}</li>
+        </ul>
+      </div>
+    </template>
+  </template>
+</template>
