@@ -5,9 +5,9 @@
   <template if:true={loaded}>
     <template if:true={wCurrent}>
       <h1 class="slds-text-heading_medium">
-        Here's the current wheather in {destination}
+        Here's the current wheather in: {destination}
       </h1>
-      <div>
+      <div class="slds-text-heading_small slds-var-p-vertical_medium">
         <ul>
           <li>Description: {wCurrent.description}</li>
           <li>Temperature: {wCurrent.temperature}°C</li>

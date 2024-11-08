@@ -7,14 +7,28 @@ const columns = [
   { label: "Description", fieldName: "description" }
 ];
 export default class WheatherForecast extends LightningElement {
-  @api destination;
+  newDestination;
+
+  @api get destination() {
+    return this._destination;
+  }
+  set destination(value) {
+    this._destination = value;
+    if (this._destination) {
+      if (this._destination.includes(" ")) {
+        this.newDestination = this._destination.replaceAll(" ", "-");
+      } else {
+        this.newDestination = this._destination;
+      }
+    }
+  }
   @track wForecast = [];
   type = "forecast";
   loaded = false;
   columns = columns;
   errorMessage = "";
 
-  @wire(getWheather, { type: "$type", destination: "$destination" })
+  @wire(getWheather, { type: "$type", destination: "$newDestination" })
   wiredData({ error, data }) {
     if (data) {
       console.log("Forecast", data);

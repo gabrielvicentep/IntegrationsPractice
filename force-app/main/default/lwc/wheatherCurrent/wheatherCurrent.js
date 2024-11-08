@@ -20,6 +20,9 @@ export default class WheatherCurrent extends LightningElement {
     }
   }
   async getCurrentWheather(destination) {
+    if (destination.includes(" ")) {
+      destination = destination.replaceAll(" ", "-");
+    }
     if (destination) {
       try {
         const wList = await getWheather({
