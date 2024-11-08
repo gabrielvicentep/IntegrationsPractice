@@ -1,0 +1,43 @@
+<template>
+  <div class="slds-container_large">
+    <div class="slds-m-top_medium slds-m-bottom_x-large">
+      <h2 class="slds-text-heading_medium slds-p-around_medium">
+        Enter a destination.
+      </h2>
+
+      <div>
+        <div class="slds-p-around_medium lgc-bg">
+          <lightning-input
+            type="text"
+            label="Enter some text"
+            value={newDestination}
+            onchange={handleOnChangeDestination}
+          ></lightning-input>
+          <div class="slds-text-color_error">{inputError}</div>
+        </div>
+        <div>
+          <lightning-button
+            variant="brand"
+            label="Get Current Wheather"
+            onclick={handleCurrent}
+            class="slds-m-left_x-small"
+          ></lightning-button>
+          <lightning-button
+            variant="brand-outline"
+            label="Get Forcast"
+            onclick={handleForecast}
+            class="slds-m-left_x-small"
+          ></lightning-button>
+        </div>
+      </div>
+    </div>
+    <div class="slds-p-horizontal_medium">
+      <template lwc:if={showForecast}>
+        <c-wheather-forecast destination={destination}></c-wheather-forecast>
+      </template>
+      <template lwc:if={showCurrent}>
+        <c-wheather-current destination={destination}></c-wheather-current>
+      </template>
+    </div>
+  </div>
+</template>
