@@ -2,11 +2,14 @@
   "packageDirectories": [
     {
       "path": "force-app",
+      "package": "Integration Challenge",
+      "versionName": "ver 0.1",
+      "versionNumber": "0.1.0.NEXT",
       "default": true
     }
   ],
   "name": "IntegrationsPractice",
-  "namespace": "",
+  "namespace": "integChllgGV",
   "sfdcLoginUrl": "https://login.salesforce.com",
   "sourceApiVersion": "62.0"
 }
