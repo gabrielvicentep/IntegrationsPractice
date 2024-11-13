@@ -4,7 +4,7 @@ import { ShowToastEvent } from "lightning/platformShowToastEvent";
 export default class WrapperLwc extends LightningElement {
   @track inputError = "";
   destination;
-  newDestination;
+  newDestination = "";
   showForecast = false;
   showCurrent = false;
   errorMessage = "test";
@@ -33,7 +33,10 @@ export default class WrapperLwc extends LightningElement {
     }
   }
   validateDestination() {
-    if (!this.newDestination) {
+    if (
+      this.newDestination === null ||
+      this.newDestination.match(/^ *$/) !== null //checks if input is empty or whitespaces
+    ) {
       this.inputError = "Please enter a destination";
       return false;
     }
