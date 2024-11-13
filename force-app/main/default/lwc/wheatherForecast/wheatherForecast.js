@@ -2,8 +2,8 @@ import { LightningElement, track, api, wire } from "lwc";
 import getWheather from "@salesforce/apex/WheatherCallouts.getWheather";
 
 const columns = [
-  { label: "Day", fieldName: "day" },
-  { label: "Temperature °C", fieldName: "temperature", minWith: 200 },
+  { label: "Day", fieldName: "day", initialWidth: 180 },
+  { label: "Temperature °C", fieldName: "temperature", initialWidth: 180 },
   { label: "Description", fieldName: "description" }
 ];
 export default class WheatherForecast extends LightningElement {
