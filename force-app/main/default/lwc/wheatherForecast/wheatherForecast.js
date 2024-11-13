@@ -3,7 +3,7 @@ import getWheather from "@salesforce/apex/WheatherCallouts.getWheather";
 
 const columns = [
   { label: "Day", fieldName: "day" },
-  { label: "Temperature", fieldName: "temperature" },
+  { label: "Temperature °C", fieldName: "temperature", minWith: 200 },
   { label: "Description", fieldName: "description" }
 ];
 export default class WheatherForecast extends LightningElement {

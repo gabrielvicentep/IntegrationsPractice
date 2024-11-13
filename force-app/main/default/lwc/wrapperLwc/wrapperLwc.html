@@ -1,7 +1,17 @@
 <template>
-  <div class="slds-container_large">
+  <div class="bg-image slds-var-p-horizontal_medium slds-var-p-vertical_large">
+    <lightning-formatted-text
+      value="Wheather App"
+      class="slds-text-heading_large"
+    >
+    </lightning-formatted-text>
+  </div>
+  <lightning-card>
     <div class="slds-var-m-top_medium slds-var-m-bottom_x-large">
-      <h2 class="slds-text-heading_small slds-var-p-horizontal_medium">
+      <h2
+        class="slds-text-heading_small slds-var-p-horizontal_medium"
+        slot="title"
+      >
         Enter a destination.
       </h2>
 
@@ -14,18 +24,19 @@
           ></lightning-input>
           <div class="slds-text-color_error">{inputError}</div>
         </div>
-        <div class="slds-var-p-around_medium">
-          <lightning-button
-            variant="brand"
-            label="Get Current Wheather"
-            onclick={handleCurrent}
-          ></lightning-button>
-          <lightning-button
-            variant="brand-outline"
-            label="Get Forcast"
-            onclick={handleForecast}
-            class="slds-var-m-left_x-small"
-          ></lightning-button>
+        <div class="slds-var-p-around_medium" slot="footer">
+          <lightning-button-group>
+            <lightning-button
+              variant="brand"
+              label="Get Current Wheather"
+              onclick={handleCurrent}
+            ></lightning-button>
+            <lightning-button
+              variant="brand-outline"
+              label="Get Forcast"
+              onclick={handleForecast}
+            ></lightning-button>
+          </lightning-button-group>
         </div>
       </div>
     </div>
@@ -37,5 +48,5 @@
         <c-wheather-current destination={destination}></c-wheather-current>
       </template>
     </div>
-  </div>
+  </lightning-card>
 </template>

@@ -1,0 +1,11 @@
+:host {
+  --slds-c-card-color-background: white;
+  --slds-c-input-color-background: white;
+}
+.bg-image {
+  background-image: url("/resource/wheatherBanner");
+}
+.slds-text-heading_large {
+  font-style: bold;
+  color: white;
+}
