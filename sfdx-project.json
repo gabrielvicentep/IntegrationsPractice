@@ -1,15 +1,22 @@
 {
   "packageDirectories": [
     {
+      "versionName": "ver 0.2",
+      "versionNumber": "0.2.0.NEXT",
+      "ancestorVersion": "HIGHEST",
       "path": "force-app",
+      "default": true,
       "package": "Integration Challenge",
-      "versionName": "ver 0.1",
-      "versionNumber": "0.1.0.NEXT",
-      "default": true
+      "versionDescription": ""
     }
   ],
   "name": "IntegrationsPractice",
   "namespace": "integChllgGV",
   "sfdcLoginUrl": "https://login.salesforce.com",
-  "sourceApiVersion": "62.0"
+  "sourceApiVersion": "62.0",
+  "packageAliases": {
+    "Integration Challenge": "0Hobm0000000BoHCAU",
+    "Integration Challenge@0.1.0-1": "04tbm0000004EafAAE",
+    "Integration Challenge@0.2.0-1": "04tbm0000004JLpAAM"
+  }
 }
